@@ -1,0 +1,169 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Ariot  Properties Limited</title>
+  <!-- site favicon -->
+  <link rel="shortcut icon" type="image/png" href="{% static 'assets/images/favicon.jpg' %}"/>
+  <!-- fontawesome css link -->
+<link rel="stylesheet" href="{% static 'assets/css/fontawesome.min.css' %}">
+  <!-- bootstrap css link -->
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %} ">
+  <!-- lightcase css link -->
+<link rel="stylesheet" href="{% static 'assets/css/lightcase.css' %} ">
+  <!-- animate css link -->
+<link rel="stylesheet" href="{% static 'assets/css/animate.css' %} ">
+  <!-- nice select css link -->
+<link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %} ">
+  <!-- datepicker css link -->
+<link rel="stylesheet" href="{% static 'assets/css/datepicker.min.css' %} ">
+  <!-- wickedpicker css link -->
+<link rel="stylesheet" href="{% static 'assets/css/wickedpicker.min.css' %} ">
+  <!-- jquery ui css link -->
+<link rel="stylesheet" href="{% static 'assets/css/jquery-ui.min.css' %} ">
+  <!-- owl carousel css link -->
+<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %} ">
+  <!-- main style css link -->
+<link rel="stylesheet" href="{% static 'assets/css/main.css' %} ">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+</head>
+<body>
+
+     
+    {% include 'include/nav.html' %}
+
+
+    {% block content %}
+
+    {% endblock %}
+
+<!-- footer-section start -->
+<footer class="footer-section">
+    <div class="footer-top pt-120 pb-120">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-8">
+            <div class="footer-widget widget-about">
+              <div class="widget-about-content">
+                <a href="{% url 'home' %}" class="footer-logo"><img src="{% static 'assets/images/houselogo.jpg' %}" alt="logo"></a>
+                <p>We offer you world class, beautifully designed and comfortable apartments for your different needs.  </p>
+                <ul class="social-links">
+                  <li><a href=" "><i class="fab fa-facebook"></i></a></li>
+                  <li><a href=" "><i class="fab fa-twitter"></i></a></li>
+                  <li><a href=" "><i class="fab fa-linkedin"></i></a></li>
+                  <li><a href=" "><i class="fab fa-google-plus"></i></a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-sm-4">
+            <div class="footer-widget widget-menu">
+              <h4 class="widget-title">Our Properties</h4>
+              <ul>
+                <li><a href="{% url 'properties' %} ">Cedar Lone</a></li>
+                <li><a href="{% url 'properties' %} ">Sunshine Oak</a></li>
+                <li><a href="{% url 'properties' %} ">Orchad Ville</a></li>
+                <li><a href="{% url 'properties' %}">Evergreen</a></li>
+                <li><a href="{% url 'properties' %}">Melody Vine</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-sm-4">
+            <div class="footer-widget widget-menu">
+              <h4 class="widget-title">useful link</h4>
+              <ul>
+                <li><a href="{% url 'about' %}">about</a></li>
+                <li><a href="{% url 'properties' %}">Properties</a></li>
+                <li><a href="{% url 'blog' %} ">blog</a></li>
+              
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-sm-8">
+            <div class="footer-widget widget-address">
+              <h4 class="widget-title">contact us</h4>
+              <ul>
+                <li>
+                  <i class="fa fa-map-marker"></i>
+                  <span> Allen Avenue, Ikeja 10012, Lagos State Nigeria </span>
+                </li>
+                <li>
+                  <i class="fa fa-envelope"></i>
+                  <span>www.ariotpropeties.com www.oursupport/info@ariotproperties.com</span>
+                </li>
+                <li>
+                  <i class="fa fa-phone-square"></i>
+                  <span>+234123456-01 , +234567890-21, +2341234567-09</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-sm-6">
+            <p class="copy-right-text"><a href="">@Debbie 2021</a></p>
+          </div>
+          <!-- <div class="col-sm-6">
+            <ul class="payment-method d-flex justify-content-end">
+              <li>We accept</li>
+              <li><img src="{% static 'assets/images/money-method/1.png' %}" alt="image"></li>
+              <li><img src="{% static 'assets/images/money-method/2.png' %}" alt="image"></li>
+              <li><img src="{% static 'assets/images/money-method/3.png' %}" alt="image"></li>
+            </ul>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- footer-section end -->
+
+
+  <!-- scroll-to-top start -->
+  <div class="scroll-to-top">
+    <span class="scroll-icon">
+      <i class="fas fa-home"></i>
+    </span>
+  </div>
+  <!-- scroll-to-top end -->
+  
+  <!-- jquery js link -->
+  <script src=" {% static 'assets/js/jquery-3.3.1.min.js' %}"></script>
+  <!-- jquery migrate js link -->
+  <script src=" {% static 'assets/js/jquery-migrate-3.0.0.js' %} "></script>
+  <!-- bootstrap js link -->
+  <script src=" {% static 'assets/js/bootstrap.min.js' %} "></script>
+  <!-- lightcase js link -->
+  <script src=" {% static 'assets/js/lightcase.js' %} "></script>
+  <!-- wow js link -->
+  <script src=" {% static 'assets/js/wow.min.js' %} "></script>
+  <!-- nice select js link -->
+  <script src=" {% static 'assets/js/jquery.nice-select.min.js' %} "></script>
+  <!-- datepicker js link -->
+  <script src=" {% static 'assets/js/datepicker.min.js' %} "></script>
+  <script src=" {% static 'assets/js/datepicker.en.js' %} "></script>
+  <!-- wickedpicker js link -->
+  <script src=" {% static 'assets/js/wickedpicker.min.js' %} "></script>
+  <!-- owl carousel js link -->
+  <script src=" {% static 'assets/js/owl.carousel.min.js' %} "></script>
+  <!-- jquery ui js link -->
+  <script src=" {% static 'assets/js/jquery-ui.min.js' %} "></script>
+  <!-- main js link -->
+  <script src=" {% static 'assets/js/main.js' %} "></script>
+</body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</html>

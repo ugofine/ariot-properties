@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+ <!-- inner-banner start -->
+ <section class="inner-page-banner bg_img overlay-3 " data-background="{% static 'assets/images/hous.jpg' %}">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="page-title">Ariot Properties</h2>
+          <!-- <ol class="page-list">
+            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li>Contact</li>
+          </ol> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- inner-banner end -->
+
+  <!-- contact-section start -->
+  <section class="contact-section pt-120 pb-120">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="contact-item text-center">
+            <div class="icon"><i class="fas fa-home"></i></div>
+            <div class="content">
+              <h4 class="title">office address</h4>
+              <p> Allen Avenue, Ikeja 10012, <br/> Lagos State <br/>Southwest,Nigeria</p>
+            </div>
+          </div>
+        </div><!-- contact-item end -->
+        <div class="col-lg-4">
+          <div class="contact-item text-center">
+            <div class="icon"> <i class="fas fa-phone"></i> </div>
+            <div class="content">
+              <h4 class="title">Phone Number</h4>
+              <p>+234-080-123-456 , 096545245<br/>  0145784521 <br/>234-070254789645</p>
+            </div>
+          </div>
+        </div><!-- contact-item end -->
+        <div class="col-lg-4">
+          <div class="contact-item text-center">
+            <div class="icon"><i class="far fa-envelope"></i></div>
+            <div class="content">
+              <h4 class="title">Email Address</h4>
+              <p>infor@ariot.com<br/>www.ariotproperties.com<br/>facebook/olivet.com</p>
+            </div>
+          </div>
+        </div><!-- contact-item end -->
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="contact-form-area">
+            <h3 class="title">send your messages</h3>
+            <form class="contact-form " action="{% url 'contact' %}" method="post" >
+
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-6">
+                  <div class="frm-group">
+                    <input type="text" name="name" id="name" placeholder="Name*">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="frm-group">
+                    <input type="email" name="email" id="email" placeholder="Email*">
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="frm-group">
+                    <input type="text" name="phone" id="phone" placeholder="Phone*">
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="frm-group">
+                    <textarea name="message" placeholder="Write your comment"></textarea>
+                  </div>
+                </div>
+                <div class="col-lg-12">
+                  <div class="frm-group">
+                    <input type="submit" name="contact_submit" id="contact_submit" value="send your messages">
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- contact-section end -->
+
+  {% endblock %}

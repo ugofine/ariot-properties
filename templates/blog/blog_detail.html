@@ -1,0 +1,196 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- inner-banner start -->
+<section class="inner-page-banner bg_img overlay-3" data-background="{% static 'assets/images/hous.jpg' % }">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h2 class="page-title"> Ariot Properties</h2>
+          <!-- <ol class="page-list">
+            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li>blog  Details</li>
+          </ol> -->
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- inner-banner end -->
+
+<!-- blog-details-section start -->
+<section class="blog-details-section pt-120 pb-120">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8">
+          <div class="blog-details">
+            <div class="post-item-header">
+              <a href="{% url 'blog' %} " class="post-date"> {{blog.created_date|date:'d'}} <br>{{blog.created_date|date:'M'}} <br> </a>
+              <h3 class="post-title"><a href="#0">{{blog.title}}</h3>
+            </div>
+            <div class="thumb">
+              <img src="{{blog.photo.url}}" alt="image">
+            </div>
+            <ul class="post-meta">
+              <li><a href="{% url 'blog' %} "><i class="fa fa-user"></i>{{blog.author}}</a></li>
+              <li><a href="{% url 'blog' %} "><i class="fa fa-comment"></i>{{blog.comment}}</a></li>
+            </ul>
+            <div class="content">
+              <p>{{blog.content}} </p>
+              <div class="row">
+                <div class="col-md-4 col-6">
+                  <div class="block-img">
+                    <img src="{% static 'assets/images/house2.jpg' %}" alt="image">
+                  </div>
+                </div><!-- block-img end -->
+                <div class="col-md-4 col-6">
+                  <div class="block-img">
+                    <img src="{% static 'assets/images/insidehouse2.jpg' %}" alt="image">
+                  </div>
+                </div><!-- block-img end -->
+                <div class="col-md-4 col-6">
+                  <div class="block-img">
+                    <img src="{% static 'assets/images/houseinside2.jpg' %}" alt="image">
+                  </div>
+                </div><!-- block-img end -->
+              </div>
+            </div>
+            <div class="blog-details-footer">
+              <ul class="post-tags-list">
+                <li class="title"><i class="fa fa-tag"></i></li>
+                <li>
+                  <a href="{% url 'properties' %}">Property list</a>
+                  
+                </li>
+              </ul>
+              <div class="post-share-count">
+                <a href="{% url 'properties' %}">
+                  <span class="icon"><i class="fa fa-share"></i></span>
+                  <span class="amount">325 share</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="prev-next-post-btn-area">
+            <a href="{%  url 'properties' %}" class="prev-post-btn cmn-btn">preview post</a>
+            <a href="{% url 'properties' %}" class="next-post-btn cmn-btn bg-black">next post</a>
+          </div>
+
+          {% if comments %}
+          <div class="comment-area">
+            <h4 class="title"> comment</h4>
+            <ul class="comment-list">
+              <li>
+                <div class="single-comment-wrap">
+                  {% for comment in comments %}
+                  <div class="content">
+                    <h6 class="name">{{comment.author}}</h6>
+                    <span class="reply-time">{{comment.created_date}}</span>
+                    <!-- <a href="#" class="reply">reply</a> -->
+                    <p> {{comment.body}}</p>
+                  </div>
+                  {% endfor %}
+                </div>
+              </li>
+        
+            </ul>
+          </div>
+
+          {%  endif %}
+          <!-- comment side -->
+          <div class="comment-form-area">
+            <h3 class="title">Leave a Comment</h3>
+            <form action="" method="POST" class="comment-form">
+              {% csrf_token %}
+              <div class="form-group">
+               {{form.author}}
+              </div>
+              <div class="form-group">
+                {{form.body}}
+              </div>
+              <button type="submit" class="cmn-btn">post your comment</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <aside class="sidebar">
+            <div class="widget widget-all-cars">
+              <h4 class="widget-title">search in here</h4>
+              <div class="widget-body">
+                <form action="{% url 'search' %}" class="widget-search-form">
+                  <input type="search" name="keywords" id="keywords" value="{{values.keywords}}" placeholder="Search Keyword">
+                  <button class="widget-search-btn"><i class="fa fa-search"></i></button>
+                </form>
+              </div>
+            </div><!-- widget end -->
+            
+            <div class="widget">
+              <h4 class="widget-title">news categories</h4>
+              <div class="widget-body">
+                <ul class="small-post-list">
+                  <li class="small-post-item">
+                    <h6 class="post-title"><a href="#0">France Prepares to Stake Its Place in World </a></h6>
+                    <ul class="post-meta">
+                      <li><a href="#0">Tushar Khan</a></li>
+                      <li><a href="#0">renteral</a></li>
+                    </ul>
+                  </li><!-- small-post-item end -->
+                  <li class="small-post-item">
+                    <h6 class="post-title"><a href="#0">{{blog.title}}</a></h6>
+                    <ul class="post-meta">
+                      <li><a href="#0">Tushar Khan</a></li>
+                      <li><a href="#0">renteral</a></li>
+                    </ul>
+                  </li><!-- small-post-item end -->
+                  <li class="small-post-item">
+                    <h6 class="post-title"><a href=""> How To Design a Home </a></h6>
+                    <ul class="post-meta">
+                      <li><a href="#0">Tushar Khan</a></li>
+                      <li><a href="#0">renteral</a></li>
+                    </ul>
+                  </li><!-- small-post-item end -->
+                  <li class="small-post-item">
+                    <h6 class="post-title"><a href="#0">Attack in Paris Befor French Election</a></h6>
+                    <ul class="post-meta">
+                      <li><a href="#0">Tushar Khan</a></li>
+                      <li><a href="#0">renteral</a></li>
+                    </ul>
+                  </li><!-- small-post-item end -->
+                </ul>
+              </div>
+            </div><!-- widget end -->
+            <!-- <div class="widget widget-archive">
+              <h4 class="widget-title">archive</h4>
+              <div class="widget-body">
+                <ul class="archive-list">
+                  <li><a href="#0">january<span>2018</span></a></li>
+                  <li><a href="#0">march<span>2018</span></a></li>
+                  <li><a href="#0">jun<span>2018</span></a></li>
+                  <li><a href="#0">Augest<span>2019</span></a></li>
+                  <li><a href="#0">February<span>2019</span></a></li>
+                </ul>
+              </div> -->
+            </div><!-- widget end -->
+            <div class="widget widget-tags">
+              <h4 class="widget-title">news tag</h4>
+              <div class="widget-body">
+                <div class="widget-tags-list">
+                  <a href="{% url 'properties' %} ">housing</a>
+                  <a href="{% url 'properties' %} ">real estate</a>
+                  <a href="{% url 'properties' %}">apartment</a>
+                  <a href="{% url 'properties' %} ">home </a>
+                  <a href="{% url 'properties' %}">building</a>
+                  <a href="{% url 'properties' %} ">property list</a>
+                </div>
+              </div>
+            </div><!-- widget end -->
+          </aside>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- blog-details-section end -->
+
+  {% endblock %}
