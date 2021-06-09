@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-#%(=xfmk6%d75ksit6gi=!k+=x+exmidi+b0fab)a&zin*z^_x
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -85,7 +85,16 @@ WSGI_APPLICATION = 'realestate.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {'default': dj_database_url.config()}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'realestate',
+        'USER': 'postgres',
+        'PASSWORD': 'alaezi21',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
