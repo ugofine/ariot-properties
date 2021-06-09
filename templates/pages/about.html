@@ -151,17 +151,15 @@
             <div class="car-item border-none">
               <div class="thumb">
                 <img src="{{property.photo.url}}" alt="image">
-                <a href="#0" class="cmn-btn">reservation now</a>
+                <a href=" {% url 'properties' %}  " class="cmn-btn">check it out</a>
               </div>
               <div class="content px-0 pb-0">
                 <h4 class="title">{{property.name}}}</h4>
                 <span class="price">&#8358; {{property.price}} </span>
                 <div class="review-starts">
-                  <a href="#0"><i class="fa fa-star"></i>{{property.location}}</a>
-                  <a href="#0"><i class="fa fa-star"></i>{{property.purpose}}</a>
-                  <a href="#0"><i class="fa fa-star"></i>{{property.room}}Rooms</a>
-                  <a href="#0"><i class="fa fa-star-half-empty"></i></a>
-                  <a href="#0"><i class="fa fa-star-half-empty"></i></a>
+                  <a href="{% url 'properties' %}   "><i class="fa fa-star"></i>{{property.location}}</a>
+                  <a href="{% url 'properties' %}  "><i class="fa fa-star"></i>{{property.purpose}}</a>
+                  <a href="{% url 'properties' %} "><i class="fa fa-star"></i>{{property.room}}Rooms</a>
                 </div>
               </div>
             </div>
